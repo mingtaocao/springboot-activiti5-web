@@ -1,15 +1,14 @@
 /**
  * 启动流程时 弹出的模态框
- * 
+ *
  * @Author: caomt
  * @Date: 2018-12-25 10:02:38
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 10:03:07
+ * @Last Modified time: 2018-12-25 17:53:43
  */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
-import { Modal, Button } from "antd";
+import { Modal } from "antd";
 import HttpUtils from "../../http/HttpUtils";
 class MyModal extends Component {
   componentDidMount() {

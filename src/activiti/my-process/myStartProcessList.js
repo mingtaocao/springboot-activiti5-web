@@ -4,11 +4,11 @@
  * @Author: caomt
  * @Date: 2018-12-25 10:00:15
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 10:23:36
+ * @Last Modified time: 2018-12-25 17:59:15
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Button, Radio, Icon, Divider, Table } from "antd";
+import { Divider, Table } from "antd";
 import HttpUtils from "../../http/HttpUtils";
 class MyStartProcessList extends Component {
   static contextTypes = {
@@ -70,9 +70,7 @@ class MyStartProcessList extends Component {
               查看处理信息
             </a>
             <Divider type="vertical" />
-            <a href="javascript:;" >
-              查看流程图
-            </a>
+            <a href="javascript:;">查看流程图</a>
           </div>
         );
       }

@@ -3,12 +3,12 @@
  *
  * @Author: caomt
  * @Date: 2018-12-25 10:01:35
- * @Last Modified by:   caomt
- * @Last Modified time: 2018-12-25 10:01:35
+ * @Last Modified by: caomt
+ * @Last Modified time: 2018-12-25 17:55:08
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Button, Radio, Icon, Divider, Table } from "antd";
+import {Table } from "antd";
 import HttpUtils from "../../http/HttpUtils";
 class ProcessHis extends Component {
   static contextTypes = {

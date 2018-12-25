@@ -4,14 +4,11 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:57:53
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 09:58:22
+ * @Last Modified time: 2018-12-25 17:50:33
  */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
   Redirect,
   Switch
 } from "react-router-dom";

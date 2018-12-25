@@ -7,7 +7,7 @@
  * @Last Modified time: 2018-12-25 10:04:11
  */
 import React from "react";
-import { Button, Radio, Icon, Divider, Table } from "antd";
+import { Divider, Table } from "antd";
 import HttpUtils from "../../http/HttpUtils";
 import PropTypes from "prop-types";
 import MyModal from "../util/modal";
@@ -67,9 +67,7 @@ class expList extends React.Component {
               启动
             </a>
             <Divider type="vertical" />
-            <a href="javascript:;" >
-              查看实例
-            </a>
+            <a href="javascript:;">查看实例</a>
             <Divider type="vertical" />
             <a
               href="javascript:;"

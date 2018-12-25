@@ -4,12 +4,12 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:39:45
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 14:44:22
+ * @Last Modified time: 2018-12-25 17:53:01
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import HttpUtils from "../../http/HttpUtils";
-import { Button, Radio, Icon, Divider, Table } from "antd";
+import { Divider, Table } from "antd";
 import MyModal from "../util/modal";
 
 class TaskList extends Component {
@@ -67,9 +67,7 @@ class TaskList extends Component {
               处理
             </a>
             <Divider type="vertical" />
-            <a href="javascript:;" >
-              历史信息
-            </a>
+            <a href="javascript:;">历史信息</a>
           </div>
         );
       }

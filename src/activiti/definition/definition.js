@@ -3,13 +3,11 @@
  * @Author : caomt
  * @Date : 2018-12-25 09:51:20
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 09:51:49
+ * @Last Modified time: 2018-12-25 16:46:43
  */
 import React from "react";
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
   Redirect,
   Switch
 } from "react-router-dom";

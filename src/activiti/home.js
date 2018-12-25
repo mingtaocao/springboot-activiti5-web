@@ -1,12 +1,6 @@
-import { Layout, Menu, Icon, Button, Radio } from "antd";
+import { Layout, Menu, Icon, Radio } from "antd";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  Switch
-} from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import Definition from "./definition/definition";
 import Example from "./example/example";
 import Task from "./task/task";

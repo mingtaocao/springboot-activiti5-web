@@ -3,15 +3,12 @@
  * @Author : caomt 
  * @Date : 2018-12-25 09:50:19 
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 09:50:58
+ * @Last Modified time: 2018-12-25 17:51:23
  */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import TaskList from "./task-list";
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
   Redirect,
   Switch
 } from "react-router-dom";

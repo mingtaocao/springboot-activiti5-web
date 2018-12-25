@@ -4,10 +4,9 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:43:09
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 10:01:59
+ * @Last Modified time: 2018-12-25 17:55:23
  */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Button } from "antd";
 
 import HttpUtils from "../../http/HttpUtils";
