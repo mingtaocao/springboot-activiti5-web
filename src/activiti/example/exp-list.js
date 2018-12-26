@@ -4,10 +4,11 @@
  *  @Author: caomt
  * @Date: 2018-12-25 09:56:15
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 14:12:55
+ * @Last Modified time: 2018-12-26 16:04:45
  */
 import React from "react";
-import { Divider, Table } from "antd";
+import { Divider, Table, Popconfirm, message } from "antd";
+
 import HttpUtils from "../../http/HttpUtils";
 import PropTypes from "prop-types";
 import MyModal from "../util/modal";
@@ -30,7 +31,7 @@ class expList extends React.Component {
       if (res["code"] === 0) {
         this.setState({ data: res.data });
       } else {
-        alert("XX");
+        message.error("加载失败!");
       }
     });
   }
@@ -74,12 +75,15 @@ class expList extends React.Component {
             <Divider type="vertical" />
             <a href="javascript:;">查看实例</a>
             <Divider type="vertical" />
-            <a
-              href="javascript:;"
-              onClick={this.delete.bind(this, record.deploymentId)}
+            <Popconfirm
+              title="确定要删除此实例吗?"
+              onConfirm={this.delete.bind(this, record.deploymentId)}
+              onCancel={this.cancel}
+              okText="Yes"
+              cancelText="No"
             >
-              Delete
-            </a>
+              <a href="#">删除</a>
+            </Popconfirm>
           </div>
         );
       }
@@ -105,10 +109,14 @@ class expList extends React.Component {
       null
     ).then(res => {
       if (res["code"] === 0) {
+        message.success("删除成功!");
         this.queryList();
+      } else {
+        message.error("删除失败!");
       }
     });
   }
+  cancel(e) {}
   onChange(pagination, filters, sorter) {
     // console.log("params", pagination, filters, sorter);
   }

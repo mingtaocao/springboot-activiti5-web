@@ -4,10 +4,10 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:43:09
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 15:19:44
+ * @Last Modified time: 2018-12-26 16:48:18
  */
 import React, { Component } from "react";
-import { Button, Input,Table } from "antd";
+import { Button, Input, Table, message } from "antd";
 import HttpUtils from "../../http/HttpUtils";
 
 const { TextArea } = Input;
@@ -20,7 +20,7 @@ class TaskHandle extends Component {
     this.state = {
       processInstanceId: props.match.params.processInstanceId,
       handlingOpinions: null,
-      data:null
+      data: null
     };
     this.handle = this.handle.bind(this);
     this.testAreaChange = this.testAreaChange.bind(this);
@@ -29,28 +29,31 @@ class TaskHandle extends Component {
   }
 
   //查询流程历史信息
-  queryTaskInfoById(id) {}
+  queryTaskInfoById(id) { }
 
   //根据 processInstanceId  处理流程节点
   handle() {
-    console.log(this.state.handlingOpinions);
+    //如果审批意见为空  ,则提示输入审批意见
     if (
       this.state.handlingOpinions === null ||
       this.state.handlingOpinions.trim() === ""
     ) {
-      alert("请输入处理意见");
+      message.destroy();
+      message.error("请输入审批意见!");
       return;
     } else {
       HttpUtils.get(
         `/service/myTask/taskHandle?processInstanceId=${
-          this.state.processInstanceId
+        this.state.processInstanceId
         }&handlingOpinions=${this.state.handlingOpinions}`,
         null
       ).then(res => {
         if (res["code"] === 0) {
-          alert("处理成功");
+          message.success("处理成功!");
+          //刷新页面信息
+          this.queryList();
         } else {
-          alert("处理失败");
+          message.error("处理失败!");
         }
       });
     }
@@ -89,12 +92,10 @@ class TaskHandle extends Component {
       dataIndex: "endTime"
     }
   ];
-   /**根据流程id   查询流程历史审批记录 */
-   queryList() {
+  /**根据流程id   查询流程历史审批记录 */
+  queryList() {
     HttpUtils.get(
-      `/service/myTask/queryHistoricTask?id=${
-        this.state.processInstanceId
-      }`,
+      `/service/myTask/queryHistoricTask?id=${this.state.processInstanceId}`,
       null
     ).then(res => {
       if (res["code"] === 0) {
@@ -119,7 +120,7 @@ class TaskHandle extends Component {
           >
             同意
           </Button>
-          <Button icon="close-circle" style={{ marginLeft: "10px" }}>
+          <Button icon="close-circle" style={{ marginLeft: "10px" }} disabled>
             不同意
           </Button>
         </div>

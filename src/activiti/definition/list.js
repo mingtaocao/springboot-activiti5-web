@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Radio, Divider, Table } from "../../util/packages";
+import { Radio, Divider, Table, Popconfirm, message } from "antd";
 import PropTypes from "prop-types";
 import HttpUtils from "../../http/HttpUtils";
 
@@ -23,11 +23,11 @@ class List extends Component {
       pathname: `/home/definition/${e.target.value}`
     });
   };
-  /**编辑流程 */
+  /**部署流程 */
   deploy(event) {
     HttpUtils.get("/service/deploy?modelId=" + event, null).then(res => {
       if (res["code"] === 0) {
-        // this.modellist();
+        message.success("部署成功!");
       }
     });
   }
@@ -40,10 +40,14 @@ class List extends Component {
   delete(event) {
     HttpUtils.get("/service/deleteById?modelId=" + event, null).then(res => {
       if (res["code"] === 0) {
+        message.success("删除成功!");
         this.queryList();
+      } else {
+        message.error("删除失败!");
       }
     });
   }
+  cancel(e) {}
   columns = [
     {
       title: "序号",
@@ -86,9 +90,15 @@ class List extends Component {
               部署
             </a>
             <Divider type="vertical" />
-            <a href="javascript:;" onClick={this.delete.bind(this, record.id)}>
-              删除
-            </a>
+            <Popconfirm
+              title="确定要删除此实例吗?"
+              onConfirm={this.delete.bind(this, record.id)}
+              onCancel={this.cancel}
+              okText="Yes"
+              cancelText="No"
+            >
+              <a href="#">删除</a>
+            </Popconfirm>
           </div>
         );
       }
@@ -117,9 +127,9 @@ class List extends Component {
             <Radio.Button icon="search" value="add">
               新增
             </Radio.Button>
-            <Radio.Button value="del">删除</Radio.Button>
-            <Radio.Button value="in">导入</Radio.Button>
-            <Radio.Button value="out">导出</Radio.Button>
+            <Radio.Button value="del" disabled>删除</Radio.Button>
+            <Radio.Button value="in" disabled>导入</Radio.Button>
+            <Radio.Button value="out" disabled>导出</Radio.Button>
           </Radio.Group>
         </div>
         <div style={{ padding: "10px" }}>

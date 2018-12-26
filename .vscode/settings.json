@@ -1,0 +1,16 @@
+{
+    //配置eslint
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+       "javascript",
+       "javascriptreact",
+       "jsx",
+       "html",
+       { "language": "react", "autoFix": true }
+     ],
+     "eslint.options": {
+        "plugins": ["html"]
+     },
+     //为了符合eslint的两个空格间隔原则
+     "editor.tabSize": 2   
+}
