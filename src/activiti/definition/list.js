@@ -47,23 +47,28 @@ class List extends Component {
   columns = [
     {
       title: "序号",
+      key: "id",
       dataIndex: "id",
       sorter: (a, b) => a.id - b.id
     },
     {
       title: "名称",
+      key: "name",
       dataIndex: "name"
     },
     {
       title: "流程key",
+      key: "key",
       dataIndex: "key"
     },
     {
       title: "创建时间",
+      key: "createTime",
       dataIndex: "createTime"
     },
     {
       title: "版本号",
+      key: "version",
       dataIndex: "version",
       sorter: (a, b) => a.version - b.version
     },

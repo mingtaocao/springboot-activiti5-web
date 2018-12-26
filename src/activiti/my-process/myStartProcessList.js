@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 10:00:15
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 17:59:15
+ * @Last Modified time: 2018-12-26 14:16:57
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -38,26 +38,32 @@ class MyStartProcessList extends Component {
     {
       title: "编号",
       dataIndex: "id",
+      key: "id",
       sorter: (a, b) => a.id - b.id
     },
     {
       title: "流程节点名",
+      key: "name",
       dataIndex: "name"
     },
     {
       title: "发起人",
+      key: "startUserId",
       dataIndex: "startUserId"
     },
     {
       title: "开始时间",
+      key: "startTime",
       dataIndex: "startTime"
     },
     {
       title: "结束时间",
+      key: "endTime",
       dataIndex: "endTime"
     },
     {
       title: "流程状态",
+      key: "state",
       dataIndex: "state"
     },
     {
@@ -96,16 +102,15 @@ class MyStartProcessList extends Component {
   }
   render() {
     return (
-      <div>
-        <div style={{ padding: "10px" }}>
-          {this.state.data ? (
-            <Table
-              columns={this.columns}
-              dataSource={this.state.data}
-              onChange={this.onChange}
-            />
-          ) : null}
-        </div>
+      <div style={{ padding: "10px" }}>
+        {this.state.data ? (
+          <Table
+            rowKey={record => record.uid}
+            columns={this.columns}
+            dataSource={this.state.data}
+            onChange={this.onChange}
+          />
+        ) : null}
       </div>
     );
   }

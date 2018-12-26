@@ -4,7 +4,7 @@
  *  @Author: caomt
  * @Date: 2018-12-25 09:56:15
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 10:04:11
+ * @Last Modified time: 2018-12-26 14:12:55
  */
 import React from "react";
 import { Divider, Table } from "antd";
@@ -39,22 +39,27 @@ class expList extends React.Component {
     {
       title: "编号",
       dataIndex: "id",
+      key: "id",
       sorter: (a, b) => a.id - b.id
     },
     {
       title: "流程名称",
+      key: "name",
       dataIndex: "name"
     },
     {
       title: "部署编号",
+      key: "deploymentId",
       dataIndex: "deploymentId"
     },
     {
       title: "KEY",
+      key: "key",
       dataIndex: "key"
     },
     {
       title: "版本",
+      key: "version",
       dataIndex: "version"
     },
     {

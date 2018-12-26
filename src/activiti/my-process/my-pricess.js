@@ -4,14 +4,10 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:57:53
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 17:50:33
+ * @Last Modified time: 2018-12-26 14:16:53
  */
 import React, { Component } from "react";
-import {
-  Route,
-  Redirect,
-  Switch
-} from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import MyStartProcessList from "./myStartProcessList";
 import ProcessHis from "./process-his";
 class MyProcess extends Component {

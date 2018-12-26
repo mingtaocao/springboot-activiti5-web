@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:39:45
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 17:53:01
+ * @Last Modified time: 2018-12-26 13:55:53
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -39,24 +39,28 @@ class TaskList extends Component {
   columns = [
     {
       title: "编号",
+      key: 'id',
       dataIndex: "id",
       sorter: (a, b) => a.id - b.id
     },
     {
       title: "流程节点名",
+      key: 'name',
       dataIndex: "name"
     },
     {
       title: "处理人",
+      key: 'assignee',
       dataIndex: "assignee"
     },
     {
       title: "流程名称",
+      key: 'processName',
       dataIndex: "processName"
     },
     {
       title: "操作",
-      key: "action",
+      key: 'action',
       render: (text, record) => {
         return (
           <div>

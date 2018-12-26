@@ -4,15 +4,11 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:56:46
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 09:57:17
+ * @Last Modified time: 2018-12-26 14:17:06
  */
 
 import React from "react";
-import {
-  Route,
-  Redirect,
-  Switch
-} from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import expList from "./exp-list";
 class Example extends React.Component {
   render() {

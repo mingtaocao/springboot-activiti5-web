@@ -4,11 +4,11 @@
  * @Author: caomt
  * @Date: 2018-12-25 10:01:35
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 17:55:08
+ * @Last Modified time: 2018-12-26 15:19:33
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {Table } from "antd";
+import { Table } from "antd";
 import HttpUtils from "../../http/HttpUtils";
 class ProcessHis extends Component {
   static contextTypes = {
@@ -39,24 +39,28 @@ class ProcessHis extends Component {
 
   columns = [
     {
-      title: "节点id",
-      dataIndex: "taskId",
-      sorter: (a, b) => a.taskId - b.taskId
+      title: "任务编号",
+      key: "taskId",
+      dataIndex: "taskId"
     },
     {
-      title: "节点名称",
+      title: "任务名称",
+      key: "name",
       dataIndex: "name"
     },
     {
-      title: "实例id",
-      dataIndex: "processInstanceId"
-    },
-    {
-      title: "处理人id",
+      title: "处理人",
+      key: "assignee",
       dataIndex: "assignee"
     },
     {
+      title: "处理意见",
+      key: "comment",
+      dataIndex: "comment"
+    },
+    {
       title: "结束时间",
+      key: "endTime",
       dataIndex: "endTime"
     }
   ];

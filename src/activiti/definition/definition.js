@@ -3,14 +3,10 @@
  * @Author : caomt
  * @Date : 2018-12-25 09:51:20
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 16:46:43
+ * @Last Modified time: 2018-12-26 14:17:15
  */
 import React from "react";
-import {
-  Route,
-  Redirect,
-  Switch
-} from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import List from "./list";
 import Edit from "./edit";
 class Definition extends React.Component {
