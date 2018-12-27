@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Radio, Divider, Table, Popconfirm, message } from "antd";
 import PropTypes from "prop-types";
 import HttpUtils from "../../http/HttpUtils";
-
+import ModelForm from './model-form'
 /**model 列表页 */
 class List extends Component {
   static contextTypes = {
@@ -16,19 +16,21 @@ class List extends Component {
     };
     this.queryList();
   }
-  /**btn点击 跳转*/
-  handleChange = e => {
-    this.setState({ size: e.target.value });
-    this.context.router.history.push({
-      pathname: `/home/definition/${e.target.value}`
-    });
+
+  /**
+     * 调用子组件方法
+     */
+  myModal = ref => {
+    this.child = ref;
   };
+
+ 
   /**部署流程 */
   deploy(event) {
     HttpUtils.get("/service/deploy?modelId=" + event, null).then(res => {
       if (res["code"] === 0) {
         message.success("部署成功!");
-      }else{
+      } else {
         message.error(res['message']);
       }
     });
@@ -49,7 +51,7 @@ class List extends Component {
       }
     });
   }
-  cancel(e) {}
+  cancel(e) { }
   columns = [
     {
       title: "序号",
@@ -107,6 +109,7 @@ class List extends Component {
     }
   ];
 
+
   /**查询 model 列表 */
   queryList() {
     HttpUtils.get("/service/modelList", null).then(res => {
@@ -121,15 +124,44 @@ class List extends Component {
   onChange(pagination, filters, sorter) {
     // console.log("params", pagination, filters, sorter);
   }
+
+  addHandle = e => {
+
+    console.log(e.target.value)
+    //弹出模态框 填入信息
+    this.child.showModal(e.target.value);
+
+     // /**btn点击 跳转*/
+  // handleChange = e => {
+  //   // this.setState({ size: e.target.value });
+  //   console.log(e.target.value)
+
+
+  //   //如果是新增
+  //   if (e.target.value === 'add') {
+  //     // this.context.router.history.push({
+  //     //   pathname: `/home/definition/${e.target.value}`
+  //     // });
+  //     //弹出模态框 填入信息
+  //     // this.child.showModal(e.target.value);
+
+  //   }
+  // };
+  }
+  delHandle = e => {
+
+    console.log(e.target.value)
+  }
   render() {
     return (
       <div>
+
         <div style={{ borderBottom: "1px solid #e7eaec", padding: "10px" }}>
-          <Radio.Group size="large" onChange={this.handleChange}>
-            <Radio.Button icon="search" value="add">
+          <Radio.Group size="large" >
+            <Radio.Button icon="search" value="add" onClick={this.addHandle}>
               新增
             </Radio.Button>
-            <Radio.Button value="del" disabled>删除</Radio.Button>
+            <Radio.Button value="del" onClick={this.delHandle}>删除</Radio.Button>
             <Radio.Button value="in" disabled>导入</Radio.Button>
             <Radio.Button value="out" disabled>导出</Radio.Button>
           </Radio.Group>
@@ -143,6 +175,7 @@ class List extends Component {
             />
           ) : null}
         </div>
+        <ModelForm myModal={this.myModal} />
       </div>
     );
   }

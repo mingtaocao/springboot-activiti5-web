@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:52:11
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-25 09:52:33
+ * @Last Modified time: 2018-12-27 16:47:47
  */
 import React, { Component } from "react";
 import { Tabs } from "antd";
@@ -15,10 +15,12 @@ class Edit extends Component {
     super(props, context);
     this.state = {
       modelId: props.match.params.modelId,
+      createData: this.props.location.state,
       data: null,
       displayName: "none",
       url: null
     };
+
   }
   addOrEdit() {
     if (this.state.modelId) {
@@ -27,9 +29,12 @@ class Edit extends Component {
           "http://localhost:8081/service/editModel/?modelId=" +
           this.state.modelId
       });
-    } else {
+    } else if (this.state.createData) {
       this.setState({
-        url: "http://localhost:8081/service/create"
+        url: `http://localhost:8081/service/create` +
+          `?name=${this.state.createData.name}&` +
+          `description=${this.state.createData.description}&` +
+          `category=${this.state.createData.category}`
       });
     }
   }
