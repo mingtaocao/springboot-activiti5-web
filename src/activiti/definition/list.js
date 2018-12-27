@@ -28,6 +28,8 @@ class List extends Component {
     HttpUtils.get("/service/deploy?modelId=" + event, null).then(res => {
       if (res["code"] === 0) {
         message.success("部署成功!");
+      }else{
+        message.error(res['message']);
       }
     });
   }
