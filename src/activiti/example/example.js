@@ -4,12 +4,13 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:56:46
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 14:17:06
+ * @Last Modified time: 2018-12-28 15:22:53
  */
 
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import expList from "./exp-list";
+import ViewImg from "./view-img";
 class Example extends React.Component {
   render() {
     return (
@@ -18,6 +19,10 @@ class Example extends React.Component {
           <Route
             path={`${this.props.match.path}/expList`}
             component={expList}
+          />
+          <Route
+            path={`${this.props.match.path}/viewImg/:deploymentId`}
+            component={ViewImg}
           />
           <Redirect from="/" to="/home/example/expList" />
         </Switch>

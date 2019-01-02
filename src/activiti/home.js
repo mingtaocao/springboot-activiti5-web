@@ -1,4 +1,4 @@
-import { Layout, Menu, Icon, Radio } from "antd";
+import { Layout, Menu, Icon, Radio, Breadcrumb } from "antd";
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Definition from "./definition/definition";
@@ -36,13 +36,13 @@ class Home extends React.Component {
   handleUserChange = e => {
     let token = {
       xiaoming:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ1NjM5ODMyMDQ4LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoxfQ.VTRL88BtPSuGJzM6hEi_v1mt2krG1Sd2mLbdVlLlgkU",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE1OTcwNDQ0LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoxfQ.uWSn-JpSTdhuUcwpEM_1zjdjC18sqaUk-kn-ZodgF_U",
       xiaohong:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ1NTUxMjM0MjIxLCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoyfQ.iDIsNHi2VKlnfE7lLYlGGyFILCMh-CeNjjUOyGuqS8s",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE2MDQ2MTM2LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoyfQ.eAjM8njDbaJ43rHv5hmuZEDozD6SULjSB1eOtez6Eno",
       xiaozhang:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ1NTY4NDExNzM1LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjozfQ.zR8MVymlfvol2eIyhw6L9jSR6wiCyVLhp9D0f7s4CTA",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE2MDczOTQxLCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjozfQ.G-4r3zVEKq9zkUf-ZCI4QcOSwaFp_6ZMS1MVxgXDRws",
       xiaowang:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ1NTY4NDM1ODE0LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjo0fQ.1vkfibIjTBCqHLr64TL_6xLLlv1wB6BqT7Z9BV6xkFc"
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE2MDkwMzcyLCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjo0fQ.O3xrjYreY6f8Wl5TWixm_7jLeY-t5iNV87YRSVvTCJY"
     };
     if (e.target.value === "xiaoming") {
       localStorage.setItem("myTaoAuthorization", token.xiaoming);
@@ -103,6 +103,12 @@ class Home extends React.Component {
               minHeight: 280
             }}
           >
+            {/* <Breadcrumb separator=">">
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="">Application Center</Breadcrumb.Item>
+              <Breadcrumb.Item href="">Application List</Breadcrumb.Item>
+              <Breadcrumb.Item>An Application</Breadcrumb.Item>
+            </Breadcrumb> */}
             <Switch>
               <Route
                 path={`${this.props.match.path}/definition`}

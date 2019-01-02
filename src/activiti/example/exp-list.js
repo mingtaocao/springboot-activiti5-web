@@ -4,7 +4,7 @@
  *  @Author: caomt
  * @Date: 2018-12-25 09:56:15
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 16:04:45
+ * @Last Modified time: 2018-12-28 15:29:53
  */
 import React from "react";
 import { Divider, Table, Popconfirm, message } from "antd";
@@ -75,6 +75,10 @@ class expList extends React.Component {
             <Divider type="vertical" />
             <a href="javascript:;">查看实例</a>
             <Divider type="vertical" />
+            <a href="javascript:;" onClick={this.viewImg.bind(this, record.deploymentId)}>
+              流程图
+            </a>
+            <Divider type="vertical" />
             <Popconfirm
               title="确定要删除此实例吗?"
               onConfirm={this.delete.bind(this, record.deploymentId)}
@@ -93,6 +97,14 @@ class expList extends React.Component {
   /**启动流程 */
   start(key) {
     this.child.showModal(key);
+  }
+  /**通过部署id 查看流程图 */
+  viewImg(deploymentId) {
+    console.log(deploymentId);
+    this.context.router.history.push(
+      `/home/example/viewImg/${deploymentId}`
+    );
+
   }
 
   /**
@@ -116,7 +128,7 @@ class expList extends React.Component {
       }
     });
   }
-  cancel(e) {}
+  cancel(e) { }
   onChange(pagination, filters, sorter) {
     // console.log("params", pagination, filters, sorter);
   }

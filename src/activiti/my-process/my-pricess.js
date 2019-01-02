@@ -4,12 +4,13 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:57:53
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 14:16:53
+ * @Last Modified time: 2018-12-28 11:33:01
  */
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import MyStartProcessList from "./myStartProcessList";
 import ProcessHis from "./process-his";
+import ProcessImg from './ProcessImg'
 class MyProcess extends Component {
   static propTypes = {};
 
@@ -24,6 +25,10 @@ class MyProcess extends Component {
           <Route
             path={`${this.props.match.path}/detail/:id`}
             component={ProcessHis}
+          />
+          <Route
+            path={`${this.props.match.path}/img`}
+            component={ProcessImg}
           />
           <Redirect from="/" to="/home/myProcess/list" />
         </Switch>
