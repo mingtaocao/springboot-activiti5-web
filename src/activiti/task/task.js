@@ -3,7 +3,7 @@
  * @Author : caomt 
  * @Date : 2018-12-25 09:50:19 
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-27 17:51:43
+ * @Last Modified time: 2019-01-03 10:11:19
  */
 import React, { Component } from "react";
 import TaskList from "./task-list";
@@ -31,7 +31,7 @@ class Task extends Component {
               path={`${this.props.match.path}/taskHandle/:processInstanceId`}
               component={TaskHandle}
             />
-            <Redirect from="/" to="/home/task/taskList" />
+            <Redirect from="/home/task" to="/home/task/taskList" />
           </Switch>
         </div>
       </div>

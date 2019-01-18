@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:39:45
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 13:55:53
+ * @Last Modified time: 2019-01-04 17:50:06
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -31,7 +31,7 @@ class TaskList extends Component {
       if (res["code"] === 0) {
         this.setState({ data: res.data });
       } else {
-        alert("XX");
+        alert(res["message"]);
       }
     });
   }

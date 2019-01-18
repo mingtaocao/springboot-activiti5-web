@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 10:00:15
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 14:16:57
+ * @Last Modified time: 2019-01-04 17:53:31
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
@@ -75,8 +75,8 @@ class MyStartProcessList extends Component {
             <a href="javascript:;" onClick={this.seeHis.bind(this, record.id)}>
               查看处理信息
             </a>
-            <Divider type="vertical" />
-            <a href="javascript:;">查看流程图</a>
+            {/* <Divider type="vertical" />
+            <a href="javascript:;">查看流程图</a> */}
           </div>
         );
       }

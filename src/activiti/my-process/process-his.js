@@ -4,12 +4,13 @@
  * @Author: caomt
  * @Date: 2018-12-25 10:01:35
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 17:24:09
+ * @Last Modified time: 2019-01-04 17:40:55
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Table } from "antd";
 import HttpUtils from "../../http/HttpUtils";
+import ActivitiProcessImg from "./activiti-proccess-image";
 class ProcessHis extends Component {
   static contextTypes = {
     router: PropTypes.object
@@ -76,6 +77,7 @@ class ProcessHis extends Component {
             />
           ) : null}
         </div>
+        <ActivitiProcessImg msg={this.state.id}/>
       </div>
     );
   }

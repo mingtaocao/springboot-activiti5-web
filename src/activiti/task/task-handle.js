@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:43:09
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-26 16:48:18
+ * @Last Modified time: 2019-01-16 11:33:19
  */
 import React, { Component } from "react";
 import { Button, Input, Table, message } from "antd";
@@ -33,19 +33,15 @@ class TaskHandle extends Component {
 
   //根据 processInstanceId  处理流程节点
   handle() {
+    console.log(this.state.processInstanceId)
     //如果审批意见为空  ,则提示输入审批意见
-    if (
-      this.state.handlingOpinions === null ||
-      this.state.handlingOpinions.trim() === ""
-    ) {
+    if (this.state.handlingOpinions === null || this.state.handlingOpinions.trim() === "") {
       message.destroy();
       message.error("请输入审批意见!");
       return;
     } else {
-      HttpUtils.get(
-        `/service/myTask/taskHandle?processInstanceId=${
-        this.state.processInstanceId
-        }&handlingOpinions=${this.state.handlingOpinions}`,
+      HttpUtils.get(`/service/myTask/taskHandle?processInstanceId=`
+        + `${this.state.processInstanceId}&handlingOpinions=${this.state.handlingOpinions}`,
         null
       ).then(res => {
         if (res["code"] === 0) {
@@ -101,7 +97,7 @@ class TaskHandle extends Component {
       if (res["code"] === 0) {
         this.setState({ data: res.data });
       } else {
-        alert("XX");
+        alert(res["message"]);
       }
     });
   }

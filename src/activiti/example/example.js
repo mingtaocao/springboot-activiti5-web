@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:56:46
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-28 15:22:53
+ * @Last Modified time: 2019-01-03 10:12:39
  */
 
 import React from "react";
@@ -24,7 +24,7 @@ class Example extends React.Component {
             path={`${this.props.match.path}/viewImg/:deploymentId`}
             component={ViewImg}
           />
-          <Redirect from="/" to="/home/example/expList" />
+          <Redirect from="/home/example" to="/home/example/expList" />
         </Switch>
       </div>
     );

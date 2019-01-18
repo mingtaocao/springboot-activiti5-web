@@ -36,13 +36,13 @@ class Home extends React.Component {
   handleUserChange = e => {
     let token = {
       xiaoming:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE1OTcwNDQ0LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoxfQ.uWSn-JpSTdhuUcwpEM_1zjdjC18sqaUk-kn-ZodgF_U",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ3NTE3MzQxNDc4LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoxfQ.7ZwJ6hBgwsUy0TRSXc7hoJdEAJC3tRIuKaxEFMnvs2k",
       xiaohong:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE2MDQ2MTM2LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoyfQ.eAjM8njDbaJ43rHv5hmuZEDozD6SULjSB1eOtez6Eno",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ3NTE3MzcyNTExLCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoyfQ.ejxJRjKrZkZ4Tf7-WvsSV0hNlCRwkJncijOTyiRIExU",
       xiaozhang:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE2MDczOTQxLCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjozfQ.G-4r3zVEKq9zkUf-ZCI4QcOSwaFp_6ZMS1MVxgXDRws",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ3NTE3NDE5ODY5LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjozfQ.ujVsj51gBdo1FW9U9_lHeM3shaYK_46Jgw9psK7t6CI",
       xiaowang:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ2NDE2MDkwMzcyLCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjo0fQ.O3xrjYreY6f8Wl5TWixm_7jLeY-t5iNV87YRSVvTCJY"
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ3NTE3Mzk1NTk3LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjo0fQ.Tq-fjysOsy_ChohurMyCw36feb3JQJxayyb5ZcAYohg"
     };
     if (e.target.value === "xiaoming") {
       localStorage.setItem("myTaoAuthorization", token.xiaoming);

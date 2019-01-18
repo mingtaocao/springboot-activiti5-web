@@ -4,14 +4,14 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:52:11
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-27 16:47:47
+ * @Last Modified time: 2019-01-15 12:22:48
  */
 import React, { Component } from "react";
 import { Tabs } from "antd";
 
 const TabPane = Tabs.TabPane;
 class Edit extends Component {
-  constructor(props, context) {
+  constructor(props, context) { 
     super(props, context);
     this.state = {
       modelId: props.match.params.modelId,

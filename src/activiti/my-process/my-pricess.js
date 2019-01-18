@@ -4,7 +4,7 @@
  * @Author: caomt
  * @Date: 2018-12-25 09:57:53
  * @Last Modified by: caomt
- * @Last Modified time: 2018-12-28 11:33:01
+ * @Last Modified time: 2019-01-03 10:12:41
  */
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
@@ -30,7 +30,7 @@ class MyProcess extends Component {
             path={`${this.props.match.path}/img`}
             component={ProcessImg}
           />
-          <Redirect from="/" to="/home/myProcess/list" />
+          <Redirect from="/home/myProcess" to="/home/myProcess/list" />
         </Switch>
       </div>
     );
