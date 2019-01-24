@@ -8,7 +8,7 @@ class ProcessImg extends React.Component {
   render() {
     return (
       <div>
-        <img src="http://192.168.7.5:8081/service/viewImage?deploymentId=50016" />
+        <img src="http://localhost:8081/service/viewImage?deploymentId=50016" />
       </div>
     )
   }

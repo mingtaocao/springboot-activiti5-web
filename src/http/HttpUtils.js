@@ -2,17 +2,12 @@
  * @Author: caomt 
  * @Date: 2018-12-19 20:26:43 
  * @Last Modified by: caomt
- * @Last Modified time: 2019-01-03 14:15:41
+ * @Last Modified time: 2019-01-22 14:19:46
  */
 
-const http = 'http://192.168.7.5:8081';
+const http = 'http://localhost:8081';
 export default class HttpUtils {
-    //  headers = {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //     'Authorization':'',
-    // }
-     
+    
     //基于 fetch 封装的 GET请求
     static get(url,data) {
 

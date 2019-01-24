@@ -9,7 +9,7 @@ export class ViewImg extends Component {
   constructor(props,context){
 
     super(props, context);
-    let baseUrl ="http://192.168.7.5:8081/service/viewImage?deploymentId="
+    let baseUrl ="http://localhost:8081/service/viewImage?deploymentId="
 
     this.state = {
       deploymentId: props.match.params.deploymentId,

@@ -8,7 +8,7 @@ export class ActivitiProcessImg extends Component {
   constructor(props,context){
 
     super(props, context);
-    let baseUrl ="http://192.168.7.5:8081/service/myTask/getActivitiProcessImage?pProcessInstanceId="
+    let baseUrl ="http://localhost:8081/service/myTask/getActivitiProcessImage?pProcessInstanceId="
 
     this.state = {
       pProcessInstanceId: props.msg,
