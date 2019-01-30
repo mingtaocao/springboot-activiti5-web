@@ -36,7 +36,7 @@ class Home extends React.Component {
   handleUserChange = e => {
     let token = {
       xiaoming:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ4MTIyNDEwMDg3LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoxfQ._pDN2sWQUTO9tEg4OgrSu2rR7iCLezrPFohh3gz_Ov0",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ4NjM3MzMxNjc3LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoxfQ.NaeHN93oiBZo5gWTCFR3L_erVwpsLiA0v4BkNxNq7O4",
       xiaohong:
         "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTQ4MTIzMDUyOTk0LCJpc3MiOiJsdWN1bGVudEBhdXRvbWF0aW9uIiwidXNlcklkIjoyfQ.5HaeVPpVAzaM0LsTKR4L__6tOA6LL2kij4IHjpKX4lw",
       xiaozhang:
